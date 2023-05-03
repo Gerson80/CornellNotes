@@ -17,11 +17,8 @@ class TopicFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-
-            'unidad'=>fake()->randomDigitNot([0,7,8,9]),
-            'tema'=>fake()->sentences(),
-            'suptema'=>fake()->sentences()
+            'tema'=>fake()->sentence(),
+            'unidad'=>fake()->randomElement([7, 8, 9])
         ];
     }
 }

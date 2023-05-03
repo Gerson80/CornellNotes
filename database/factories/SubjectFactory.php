@@ -17,7 +17,10 @@ class SubjectFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre'=>fake()->sentence(5),
+            'clave'=>fake()->bothify('???-####'),
+            'ingenieria'=>fake()->randomElement(['isc','ier','iem','ii','ie']),
+            'semestre'=>fake()->numberBetween(1, 9)
         ];
     }
 }

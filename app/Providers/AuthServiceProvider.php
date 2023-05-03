@@ -5,6 +5,14 @@ namespace App\Providers;
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
+// importaciones para que funcione la autorizacion ---
+use Illuminate\Support\Facades\Gate;
+use App\Models\Cornellnote;
+use App\Policies\CornellnotePolicy;
+use App\Models\Bug;
+use App\Policies\BugPolicy;
+// ---------------------------------------------------
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +22,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        Cornellnote::class => CornellnotePolicy::class,
+        Bug::class => BugPolicy::class,
     ];
 
     /**
